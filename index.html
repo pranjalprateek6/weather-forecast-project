@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,700;1,100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./config.js" defer></script>
+    <script src="./script.js" defer></script>
+    <title>Mawesome</title>
+</head>
+
+<body>
+
+    <video autoplay loop muted plays-inline class="backvideo"> 
+        <source src="assets/bgv.mp4" type="video/mp4">
+      
+    </video>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light ">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html"> <img src="assets/logo.png" alt="" width="26" height="20"> &nbspMawesome!
+
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="features.html">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html" tabindex="-1">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="wrapper">
+        <div class="loading hidden"></div>
+        <div class="search">
+            <form action="">
+                <input type="text" class="search__input" placeholder="Location">
+                <button type="sumbit" class="search__button">Search Location</button>
+                <button type="sumbit" class="geo__button"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cursor-fill" viewBox="0 0 16 16">
+                    <path d="M14.082 2.182a.5.5 0 0 1 .103.557L8.528 15.467a.5.5 0 0 1-.917-.007L5.57 10.694.803 8.652a.5.5 0 0 1-.006-.916l12.728-5.657a.5.5 0 0 1 .556.103z"/>
+                  </svg> Get Device Location</button>
+
+            </form>
+        </div>
+        <div class="result hidden">
+            <div class="container left-block">
+                <div class="change-view">Show week forecast</div>
+                <div class="main">
+                    <div class="city-name"></div>
+                    <div class="date"></div>
+                    <div class="icon-big"></div>
+                    <div class="main-temp"></div>
+                    <div class="condition"></div>
+                </div>
+                <div class="day-forecast">
+                    <div class="hour-block">
+                        <div class="icon"></div>
+                        <div class="day-temp"></div>
+                        <div class="day-time"></div>
+                    </div>
+                    <div class="hour-block">
+                        <div class="icon"></div>
+                        <div class="day-temp"></div>
+                        <div class="day-time"></div>
+                    </div>
+                    <div class="hour-block">
+                        <div class="icon"></div>
+                        <div class="day-temp"></div>
+                        <div class="day-time"></div>
+                    </div>
+                    <div class="hour-block">
+                        <div class="icon"></div>
+                        <div class="day-temp"></div>
+                        <div class="day-time"></div>
+                    </div>
+                    <div class="hour-block">
+                        <div class="icon"></div>
+                        <div class="day-temp"></div>
+                        <div class="day-time"></div>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="info__header">Today</div>
+                    <div class="info__content">
+                        <div class="info__block">
+                            <div class="info__block--header">Pressure</div>
+                            <div id="pressure" class="info__block--value"></div>
+                        </div>
+                        <div class="info__block">
+                            <div class="info__block--header">Wind</div>
+                            <div id="wind" class="info__block--value"></div>
+                        </div>
+                        <div class="info__block">
+                            <div class="info__block--header">Humidity</div>
+                            <div id="humidity" class="info__block--value"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sun">
+                    <div class="info__header">Sun</div>
+                    <div class="info__content">
+                        <div class="info__block">
+                            <div class="info__block--header">Sunrise</div>
+                            <div id="sunrise" class="info__block--value"></div>
+                        </div>
+                        <div class="sun-wrapper">
+                            <div class="sun-icon"></div>
+                        </div>
+                        <div class="info__block">
+                            <div class="info__block--header">Sunset</div>
+                            <div id="sunset" class="info__block--value"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="container right-block">
+                <div class="change-view">Show daily forecast</div>
+                <div class="week">
+                    <div class="info__header">This Week</div>
+                    <div class="week-wrapper">
+                        <div class="week-wrapper__day">
+                            <div></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__temp">
+                            <div class="day-temp"></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__info">
+                            <div class="icon"></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="week-wrapper">
+                        <div class="week-wrapper__day">
+                            <div></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__temp">
+                            <div class="day-temp"></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__info">
+                            <div class="icon"></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="week-wrapper">
+                        <div class="week-wrapper__day">
+                            <div></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__temp">
+                            <div class="day-temp"></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__info">
+                            <div class="icon"></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="week-wrapper">
+                        <div class="week-wrapper__day">
+                            <div></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__temp">
+                            <div class="day-temp"></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__info">
+                            <div class="icon"></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="week-wrapper">
+                        <div class="week-wrapper__day">
+                            <div></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__temp">
+                            <div class="day-temp"></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__info">
+                            <div class="icon"></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="week-wrapper">
+                        <div class="week-wrapper__day">
+                            <div></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__temp">
+                            <div class="day-temp"></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__info">
+                            <div class="icon"></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="week-wrapper">
+                        <div class="week-wrapper__day">
+                            <div></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__temp">
+                            <div class="day-temp"></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__info">
+                            <div class="icon"></div>
+                            <div></div>
+                        </div>
+                    </div>
+                    <div class="week-wrapper">
+                        <div class="week-wrapper__day">
+                            <div></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__temp">
+                            <div class="day-temp"></div>
+                            <div class="night-temp"></div>
+                        </div>
+                        <div class="week-wrapper__info">
+                            <div class="icon"></div>
+                            <div></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
